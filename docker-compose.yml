@@ -12,11 +12,11 @@ services:
     env_file:
       - settings.env
     depends_on:
-      - postgres  # Assuming you have a service named 'postgres'
+      - postgres
 
   postgres:
     image: postgres
     environment:
-      POSTGRES_DB: docker
-      POSTGRES_USER: harsh
-      POSTGRES_PASSWORD: harsh@123
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
